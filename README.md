@@ -1,7 +1,9 @@
-# htmlcoin_docker
+# Build HTMLCoin Docker Images for Ubuntu 18.04 Bionic and 20.04 Focal
+
+
 ## HTMLCoin Docker dockerfile and scripts
 
-This repository contains the Dockerfile and scripts to build a HTMLCoin node version 2.5 Docker image on Ubuntu 20.04.
+This repository contains the Dockerfile and scripts to build a HTMLCoin node version 2.5 Docker image on Ubuntu 18.04 and 20.04.
 
 Clone this repository with
 
@@ -9,7 +11,17 @@ Clone this repository with
 git clone https://github.com/ilorivero/htmlcoin_docker.git
 ```
 
-To make the Ubuntu 20.04 Focal Fossa version:
+## To build the Ubuntu 18.04 Bionic version image:
+
+```bash
+cd ./htmlcoin_docker/Ubuntu_18.04/
+docker build -t htmlcoin .
+```
+
+## To build the Ubuntu 20.04 Focal Fossa version image:
+
+As there is no bitcoin repository for Ubuntu 20.04, I did some workarounds to make it work. 
+Added the bionic repository, repository keys and configured time zone for unattended install. 
 
 ```bash
 cd ./htmlcoin_docker/Ubuntu_20.04/
@@ -17,7 +29,7 @@ chmod 777 tzscript.sh
 docker build -t htmlcoin .
 ```
 
-To build and run the container image:
+## To build and run the container image:
 
 ```bash
 docker run --name htmlcoin -d htmlcoin
