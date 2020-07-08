@@ -28,7 +28,12 @@ RUN cp -rp src/htmlcoind /bin/htmlcoind
 RUN cp -rp src/htmlcoin-tx /bin/htmlcoin-tx
 RUN cp -rp src/htmlcoin-cli /bin/htmlcoin-cli
 
+ENV HTML_DATA /data
+RUN mkdir $HTML_DATA && ln -sfn $HTML_DATA /root/.htmlcoin 
+VOLUME /data
+
 COPY htmlcoin.conf /root/.htmlcoin/htmlcoin.conf
+
 
 LABEL version="2.5"
 

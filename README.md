@@ -29,10 +29,18 @@ chmod 777 tzscript.sh
 docker build -t htmlcoin .
 ```
 
+## Create a Docker Volume to store the blockchain data and htmlcoin.conf
+
+This will preserve the blockchain data.
+
+```bash
+docker volume create --name=htmlcoin-data
+```
+
 ## To build and run the container image:
 
 ```bash
-docker run --name htmlcoin -d htmlcoin
+docker run -d --rm --name htmlcoin -v htmlcoin-data:/root/.htmlcoin/ htmlcoin 
 ```
 
 To check if the htmlcoin container is running:
