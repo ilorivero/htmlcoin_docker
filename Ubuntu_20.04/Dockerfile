@@ -6,6 +6,7 @@ FROM ubuntu as build
 RUN apt-get -y update
 RUN apt-get -y install apt-utils 
 ADD tzscript.sh /tzscript.sh
+RUN chmod 777 tzscript.sh
 RUN /tzscript.sh
 
 
