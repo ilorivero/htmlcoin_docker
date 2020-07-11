@@ -34,7 +34,7 @@ RUN apt-get -y install libzmq3-dev
 
 RUN apt-get -y install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 
-RUN git clone -b "v2.5.0" https://github.com/HTMLCOIN/HTMLCOIN --recursive
+RUN git clone https://github.com/HTMLCOIN/HTMLCOIN --recursive
 #RUN git clone -b "master-2.2" https://github.com/HTMLCOIN/HTMLCOIN --recursive
 WORKDIR /HTMLCOIN
 RUN git submodule update --init --recursive
@@ -50,7 +50,7 @@ RUN cp -rp src/htmlcoin-cli /bin/htmlcoin-cli
 
 ENV HTML_DATA /data
 RUN mkdir $HTML_DATA && ln -sfn $HTML_DATA /root/.htmlcoin 
-VOLUME /data
+VOLUME /htmlcoin-data
 
 COPY htmlcoin.conf /root/.htmlcoin/htmlcoin.conf
 

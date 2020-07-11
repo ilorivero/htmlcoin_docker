@@ -30,7 +30,7 @@ RUN cp -rp src/htmlcoin-cli /bin/htmlcoin-cli
 
 ENV HTML_DATA /data
 RUN mkdir $HTML_DATA && ln -sfn $HTML_DATA /root/.htmlcoin 
-VOLUME /data
+VOLUME /htmlcoin-data
 
 COPY htmlcoin.conf /root/.htmlcoin/htmlcoin.conf
 
