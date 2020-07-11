@@ -2,13 +2,11 @@ FROM ubuntu as build
 
 # Build htmlcoin
 
-
 RUN apt-get -y update
 RUN apt-get -y install apt-utils 
 ADD tzscript.sh /tzscript.sh
 RUN chmod 777 tzscript.sh
 RUN /tzscript.sh
-
 
 RUN apt-get -y install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils git cmake libboost-all-dev libgmp-dev
 RUN apt-get -y install software-properties-common  
@@ -17,17 +15,9 @@ RUN apt-get -y install software-properties-common
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D46F45428842CE5E
 RUN add-apt-repository 'deb http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu bionic main'
 
-
-
 #RUN add-apt-repository ppa:bitcoin/bitcoin
 RUN apt-get -y update
 RUN apt-get -y install libdb4.8-dev libdb4.8++-dev
-
-# set noninteractive installation
-#ARG DEBIAN_FRONTEND="noninteractive"
-#ENV TZ = "America/Sao_Paulo"
-#install tzdata package
-
 
 # enable zeromq
 RUN apt-get -y install libzmq3-dev
