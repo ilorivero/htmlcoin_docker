@@ -2,7 +2,6 @@
 
 The method below is related for x86/x64 platform. For Arm, please access this section: https://github.com/ilorivero/htmlcoin_docker/tree/master/Arm
 
-
 ## HTMLCoin Docker dockerfile and scripts
 
 This repository contains the Dockerfile and scripts to build a HTMLCoin node version 2.5 Docker image on Ubuntu 18.04 and 20.04.
