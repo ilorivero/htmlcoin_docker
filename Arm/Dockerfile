@@ -16,14 +16,12 @@ RUN cp -rp src/htmlcoind /bin/htmlcoind && cp -rp src/htmlcoin-tx /bin/htmlcoin-
 # Place blockchain data in /htmlcoin-data folder and clean up for docker smaller size
 ENV HTML_DATA /data
 RUN mkdir $HTML_DATA && ln -sfn $HTML_DATA /root/.htmlcoin && rm -r /HTMLCOIN && apt autoremove --purge && rm -rf /var/lib/apt/lists/* 
-VOLUME /htmlcoin-data
+VOLUME /data
 
 COPY htmlcoin.conf /root/.htmlcoin/htmlcoin.conf
 
 LABEL version="2.5"
 
-EXPOSE 2020
-EXPOSE 4889
 EXPOSE 14889
 
 ENTRYPOINT ["/bin/htmlcoind"]

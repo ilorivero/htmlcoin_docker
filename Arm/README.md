@@ -38,7 +38,7 @@ docker buildx build --platform linux/arm,linux/arm64 -t ilorivero/htmlarm --push
 ## To build and run the container image:
 
 ```bash
-docker run -d --rm --name htmlcoinarm -p 14889:14889 -v htmlcoin-data:/root/.htmlcoin/ ilorivero/htmlarm
+docker run -d --rm --name htmlcoinarm -p 14889:14889 -v data:/root/.htmlcoin/ ilorivero/htmlarm
 ```
 
 To check if the htmlcoin container is running:
