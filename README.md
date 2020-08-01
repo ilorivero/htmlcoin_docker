@@ -1,6 +1,6 @@
 # Build HTMLCoin Docker Images for Ubuntu 18.04 Bionic and 20.04 Focal 
 
-The method below is related for x86/x64 platform. For Arm, please access this section: https://github.com/ilorivero/htmlcoin_docker/tree/master/Arm
+The method below is related for x86/x64 platform. For Arm, please access this section: https://github.com/ilorivero/htmlcoin_docker_arm
 
 ## HTMLCoin Docker dockerfile and scripts
 
