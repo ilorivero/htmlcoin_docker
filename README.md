@@ -35,13 +35,13 @@ docker build -t htmlcoin .
 This will preserve the blockchain data.
 
 ```bash
-docker volume create --name=htmlcoin-data
+docker volume create --name=data
 ```
 
 ## To build and run the container image:
 
 ```bash
-docker run -d --rm --name htmlcoin -v htmlcoin-data:/root/.htmlcoin/ htmlcoin 
+docker run -d --rm --name htmlcoin -v data:/root/.htmlcoin/ htmlcoin 
 ```
 
 To check if the htmlcoin container is running:
